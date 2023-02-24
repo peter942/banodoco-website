@@ -32,7 +32,7 @@ def sidebar(current_page,main_pages):
   header1, header2, header3 = st.sidebar.columns([3,3,1])
   with header1:
     if st.button("Join Discord"):
-      webbrowser.open("https://discord.gg/d6bmeAf6")
+      webbrowser.open("https://discord.gg/d6bmeAf6",new=1)
   with header2:
     if st.button("Apply To Test"):
       webbrowser.open_new_tab("https://form.typeform.com/to/vR2VNXJV")

@@ -1,5 +1,4 @@
 import streamlit as st
-import base64
 
 
 if 'page' not in st.session_state:
@@ -16,10 +15,6 @@ hide_img_fs = '''
 <style>
 button[title="View fullscreen"]{
     visibility: hidden;}
-html, body {
-    max-width: 100%;
-    overflow-x: hidden;
-}
 </style>
 '''
 

@@ -161,6 +161,7 @@ elif st.session_state['page'] == "philosophy & roadmap":
 
   st.write()
   
+  
 elif st.session_state['page'] == 'collaborate':
 
   st.title("Contribute")
@@ -197,7 +198,9 @@ elif st.session_state['page'] == 'collaborate':
   with st.expander("How will we communicate?"):
     st.write("We'll use Discord to communicate and share updates.")
 
+
 elif st.session_state['page'] == 'gallery':
   
   st.title("Gallery")
-       
+    
+    

@@ -10,7 +10,7 @@ main_pages = ["home", "philosophy & roadmap", "collaborate", "gallery"]
 # st. set_page_config(layout="wide")
 
 def sidebar(current_page,main_pages): 
-  st.sidebar.image("Do.png")
+  st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
 
   st.sidebar.markdown("***")
   st.sidebar.write("")
@@ -60,9 +60,9 @@ if st.session_state['page'] == 'home':
   st.write("We believe that the best way for a human to tell AI what video they want to create is with a video of their own that it transforms. Banodoco allows users to control and direct AI with pipelines that combine multiple models to achieve coherent transformations of characters, scenes, and styles.")
   comparison1, comparison2 = st.columns(2)
   with comparison1:
-    st.image("input.gif", caption="Before",use_column_width='always')
+    st.image("https://banodoco.s3.amazonaws.com/input_images/input.gif", caption="Before",use_column_width='always')
   with comparison2:
-    st.image("output.gif", caption="After",use_column_width='always')         
+    st.image("https://banodoco.s3.amazonaws.com/input_images/output.gif", caption="After",use_column_width='always')         
   st.info("Video prompts > word prompts. An image is worth a thousand words and a video contains 30 images per second!")
 
   st.markdown("***")

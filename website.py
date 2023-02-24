@@ -13,38 +13,36 @@ main_pages = ["home", "philosophy & roadmap", "collaborate", "gallery"]
 st.set_page_config(page_title="Banodoco")
 
 
-def sidebar(current_page,main_pages): 
+st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
+st.sidebar.markdown("***")
+st.sidebar.write("")
 
-  st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
+for page in main_pages:        
+  if page == st.session_state['page']:
+    if st.sidebar.button(page.title(),type="primary"):
+      st.session_state['page'] = page
+      st.experimental_rerun()
+  else:
+    if st.sidebar.button(page.title(),type="secondary"):
+      st.session_state['page'] = page
+      st.experimental_rerun()
 
-  st.sidebar.markdown("***")
-  st.sidebar.write("")
-  
-  for page in main_pages:        
-    if page == current_page:
-      if st.sidebar.button(page.title(),type="primary"):
-        st.session_state['page'] = page
-        st.experimental_rerun()
-    else:
-      if st.sidebar.button(page.title(),type="secondary"):
-        st.session_state['page'] = page
-        st.experimental_rerun()
+st.sidebar.markdown("***")
+st.sidebar.write("")    
 
-  st.sidebar.markdown("***")
-  st.sidebar.write("")    
-
-  st.sidebar.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)   |   [Apply To Test](https://form.typeform.com/to/vR2VNXJV)")      
-  st.sidebar.markdown("*Public release: March 2023*")
-
-
-sidebar(st.session_state['page'],main_pages)
+st.sidebar.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)   |   [Apply To Test](https://form.typeform.com/to/vR2VNXJV)")      
+st.sidebar.markdown("*Public release: March 2023*")
 
 
 if st.session_state['page'] == 'home':
 
-  st.header("An open-source tool for creating beautiful videos with AI")
-  st.write("Banodoco is a free, open-source animation tool that aims to allow anyone to use AI to create beautiful videos of anything they can imagine.")
-  st.write("It's designed for those who want precision - with an approach and tools designed to give artists enough control over various AI models to create exactly what's in their imagination.")
+  header1, header2 = st.columns(2)
+  with header1:
+    st.header("An open-source tool for creating beautiful videos with AI")
+    st.write("Banodoco is a free, open-source animation tool that aims to allow anyone to use AI to create beautiful videos of anything they can imagine.")
+    st.write("It's designed for those who want precision - with an approach and tools designed to give artists enough control over various AI models to create exactly what's in their imagination.")
+  with header2:
+    st.image("https://i.ibb.co/6wsn9j6/Untitled-design-2023-02-24-T160623-805.png")
 
   st.markdown("***")
 
@@ -161,7 +159,7 @@ elif st.session_state['page'] == "philosophy & roadmap":
 
   st.write()
   
-  
+
 elif st.session_state['page'] == 'collaborate':
 
   st.title("Contribute")

@@ -16,6 +16,10 @@ hide_img_fs = '''
 <style>
 button[title="View fullscreen"]{
     visibility: hidden;}
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
 </style>
 '''
 

@@ -1,4 +1,5 @@
 import streamlit as st
+import base64
 
 
 if 'page' not in st.session_state:
@@ -20,8 +21,7 @@ button[title="View fullscreen"]{
 
 st.markdown(hide_img_fs, unsafe_allow_html=True)
 
-
-st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
+st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png",use_column_width='always')
 st.sidebar.markdown("***")
 st.sidebar.write("")
 
@@ -50,7 +50,7 @@ if st.session_state['page'] == 'home':
     st.write("Banodoco is a free, open-source animation tool that aims to allow anyone to use AI to create beautiful videos of anything they can imagine.")
     st.write("It's designed for those who want precision - with an approach and tools designed to give artists enough control over various AI models to create exactly what's in their imagination.")
   with header2:
-    st.image("https://i.ibb.co/6wsn9j6/Untitled-design-2023-02-24-T160623-805.png")
+    st.image("https://i.ibb.co/6wsn9j6/Untitled-design-2023-02-24-T160623-805.png",use_column_width='always')
 
   st.markdown("***")
 

@@ -1,24 +1,26 @@
 import streamlit as st
-import webbrowser
-import os
-  
+
+
 if 'page' not in st.session_state:
   st.session_state['page'] = 'home'
+if 'feature' not in st.session_state:
   st.session_state['feature'] = 'timing'
+
 
 main_pages = ["home", "philosophy & roadmap", "collaborate", "gallery"]
 
-# st. set_page_config(layout="wide")
+
+st.set_page_config(page_title="Banodoco")
+
 
 def sidebar(current_page,main_pages): 
+
   st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
 
   st.sidebar.markdown("***")
   st.sidebar.write("")
   
-  for page in main_pages:
-    index_of_page = main_pages.index(page)
-    # if index is an
+  for page in main_pages:        
     if page == current_page:
       if st.sidebar.button(page.title(),type="primary"):
         st.session_state['page'] = page
@@ -27,32 +29,22 @@ def sidebar(current_page,main_pages):
       if st.sidebar.button(page.title(),type="secondary"):
         st.session_state['page'] = page
         st.experimental_rerun()
+
   st.sidebar.markdown("***")
-  st.sidebar.write("")
-  
-  header1, header2, header3 = st.sidebar.columns([3,3,1])
-  with header1:
-    st.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)")
-  with header2:
-    if st.button("Apply To Test"):
-      webbrowser.open_new_tab("https://form.typeform.com/to/vR2VNXJV")
-    st.sidebar.markdown("*Public release: March 2023*")
-  
-  
-  
-        
-    
-        
+  st.sidebar.write("")    
+
+  st.sidebar.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)   |   [Apply To Test](https://form.typeform.com/to/vR2VNXJV)")      
+  st.sidebar.markdown("*Public release: March 2023*")
+
 
 sidebar(st.session_state['page'],main_pages)
+
 
 if st.session_state['page'] == 'home':
 
   st.header("An open-source tool for creating beautiful videos with AI")
   st.write("Banodoco is a free, open-source animation tool that aims to allow anyone to use AI to create beautiful videos of anything they can imagine.")
   st.write("It's designed for those who want precision - with an approach and tools designed to give artists enough control over various AI models to create exactly what's in their imagination.")
-  if st.button("Join our Discord"):
-    webbrowser.open_new_tab("https://discord.gg/d6bmeAf6")
 
   st.markdown("***")
 
@@ -103,18 +95,7 @@ if st.session_state['page'] == 'home':
   with feature3:
     st.info(feature_text)
     
-
   st.markdown("***")
-
-  b1, b2 = st.columns([1, 1])
-  with b1:
-    st.subheader("Join our beta test")
-    st.write("We're also looking for enthusiastic, determined testers who want to make beautiful things.")
-    if st.button("Apply to beta test"):
-      webbrowser.open_new_tab("https://form.typeform.com/to/vR2VNXJV")
-  with b2:
-    st.image("https://media.discordapp.net/attachments/1017188259102724146/1078454108966629497/peteromallet_minimalistic_illustration_meaning_scientific_exper_b1f53e95-1a64-48b4-a264-42648d5b4fad.png", use_column_width='always')
-
 
   a1, a2 = st.columns([1, 1])
   with a1:
@@ -125,45 +106,36 @@ if st.session_state['page'] == 'home':
       st.experimental_rerun()
   with a2:
     st.image("https://media.discordapp.net/attachments/1017188259102724146/1078456600781652069/peteromallet_minimalistic_illustration_of_people_building_scaff_a97eb34a-7ab1-4cae-a02e-b229ff5bcb66.png", use_column_width='always')
-
  
-  c1, c2 = st.columns([1, 1])
-  with c1:
+  b1, b2 = st.columns([1, 1])
+  with b1:
     st.subheader("Philosophy & roadmap")
     st.write("We're building an open-source tool that will enable people to make whatever they can imagine!")
     if st.button("See our philosophy & roadmap"):
-      st.session_state['page'] = 'roadmap'
+      st.session_state['page'] = 'philosophy & roadmap'
       st.experimental_rerun()
-  with c2:
+  with b2:
     st.image("https://media.discordapp.net/attachments/1017188259102724146/1078451803718438942/peteromallet_minimalistic_illustration_meaning_a_long_journey_R_5dd02f2f-1583-4f39-8eae-6348ac68062a.png", use_column_width='always')
 
-  d1, d2 = st.columns([1, 1])
-  with d1:
+  c1, c2 = st.columns([1, 1])
+  with c1:
     st.subheader("Visit our gallery")
     st.write("While it's a little bit sparse now, we'll share the best creations made by artists using Banodoco.")
     if st.button("Visit Gallery"):
       st.session_state['page'] = 'gallery'
       st.experimental_rerun()
-  with d2:
+  with c2:
     st.image("https://media.discordapp.net/attachments/1017188259102724146/1078456680829960232/peteromallet_minimalistic_illustration_of_people_at_a_gallery_l_0992827a-34bf-4de1-b83d-52cc59c67d50.png", use_column_width='always')
-
   
   st.markdown("***")
 
   st.subheader("Join our Discord to learn about our releases, get early access to our beta, and to collaborate with other artists")
   st.write("Join our Discord to get the latest updates and to collaborate with other artists")
-  if st.button("Join our Discord", key = 'discord2'):
-    webbrowser.open_new_tab("https://discord.gg/d6bmeAf6")
+  st.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)   |   [Apply To Test](https://form.typeform.com/to/vR2VNXJV)")
 
 
-
-
-
-
-
-  
-    
 elif st.session_state['page'] == "philosophy & roadmap":
+
   header1, header2 = st.columns([1, 1])
   with header1:  
     st.subheader("A open-source tool to assist those who want to create beautiful things")
@@ -180,7 +152,7 @@ elif st.session_state['page'] == "philosophy & roadmap":
   st.write("We believe that AI can assist humans in creating beautiful things, but that humans will always be needed to make the final decisions.")
   st.markdown("**Work to automate the mundane**")
   st.write("We want to automate the mundane tasks that are required to create beautiful things, so that humans can focus on the creative tasks.")
-  st.markdown("**Be extremely model agonistic**")
+  st.markdown("**Be structurally model agonistic**")
   st.write("We’ll use whatever models deliver the best results and build our tool in a way that makes it easy for others to add their own models.")
   st.markdown("**Open to our core**")
   st.write("Everything we do will be open for anyone to use for free (minus GPU costs) or for anyone to build on top of.")
@@ -189,25 +161,26 @@ elif st.session_state['page'] == "philosophy & roadmap":
 
   st.write()
   
-
 elif st.session_state['page'] == 'collaborate':
 
   st.title("Contribute")
   st.write("In addition to public contributors wants we release, we'd want to deeply collaborate with brilliant people, who believe in our mission, and believe in the power of open source.")
-  st.write("Everything you build will not only be open source as part of Banodoco, but will ideally but delivered in a modular way for others to easily use. For example, this means that any models created or optimised will be hosted on Replicate.com for others to easily leverage, while front-end components developed will be built as Streamlit components for others to implement.")
+  st.write("Everything you build will not only be open source as part of Banodoco, but will ideally but delivered in a modular way for others to easily use. For example, this means that any models created or optimised will be hosted on Replicate.com for others to easily leverage, while front-end components developed will be built as Streamlit components for others to implement.")  
   
   st.subheader("What we're looking for")
   st.write("We're looking for high-agency, talented individuals who want to contribute to the project.")
-  with st.expander("Machine Learning Engineer (Optimisation)"):
+  with st.expander("Optimise existing models to make them practical for usage (ML Engineer)"):
     st.write("test")
-  with st.expander("Machine Learning Engineer (Research)"):
+  with st.expander("Build out front-end components to improve editing process (JavaScript/Front-End)"):
     st.write("test")
-  with st.expander("Frontend Engineer"):
+  with st.expander("Build a small model for automated key frame selection (ML)"):
     st.write("test")
-  with st.expander("Backend Engineer"):
+  with st.expander("Build out automated backdrop positioning tool (Python)"):
     st.write("test")
-  with st.expander("Designer"):
+  with st.expander("Refine and optimise structure and speed of app (Python)"):
     st.write("test")    
+  with st.expander("Other stuff you think of (???"):
+    st.write("test")  
 
   st.subheader("FAQ:")
   st.write("Below are some frequently asked questions - well, no one actually has asked me any quesions yet, but I guess I'll just answer them anyway.")
@@ -225,6 +198,6 @@ elif st.session_state['page'] == 'collaborate':
     st.write("We'll use Discord to communicate and share updates.")
 
 elif st.session_state['page'] == 'gallery':
+  
   st.title("Gallery")
-    
-    
+       

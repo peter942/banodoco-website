@@ -1,39 +1,6 @@
-import streamlit as st
-import webbrowser
-import os
-  
-if 'page' not in st.session_state:
-  st.session_state['page'] = 'home'
-  st.session_state['feature'] = 'timing'
-
-main_pages = ["home", "philosophy & roadmap", "collaborate", "gallery"]
-
-# st. set_page_config(layout="wide")
-
-def sidebar(current_page,main_pages): 
-  st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png")
-
-  st.sidebar.markdown("***")
-  st.sidebar.write("")
-  
-  for page in main_pages:
-    index_of_page = main_pages.index(page)
-    # if index is an
-    if page == current_page:
-      if st.sidebar.button(page.title(),type="primary"):
-        st.session_state['page'] = page
-        st.experimental_rerun()
-    else:
-      if st.sidebar.button(page.title(),type="secondary"):
-        st.session_state['page'] = page
-        st.experimental_rerun()
-  st.sidebar.markdown("***")
-  st.sidebar.write("")
-  
-  header1, header2, header3 = st.sidebar.columns([3,3,1])
-  with header1:
-    if st.button("Join Discord"):
-      os.system(f'open "https://discord.gg/d6bmeAf6"')      
+ebar.columns([3,3,1])
+  with header1:    
+    st.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)")
   with header2:
     if st.button("Apply To Test"):
       webbrowser.open_new_tab("https://form.typeform.com/to/vR2VNXJV")

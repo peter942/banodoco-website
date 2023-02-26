@@ -20,7 +20,7 @@ button[title="View fullscreen"]{
 
 st.markdown(hide_img_fs, unsafe_allow_html=True)
 
-st.sidebar.image("https://i.ibb.co/xXsd2Cb/Do.png",use_column_width='always')
+st.sidebar.image("https://banodoco.s3.amazonaws.com/input_images/Do+(1).png",use_column_width='always')
 st.sidebar.markdown("***")
 st.sidebar.write("")
 
@@ -48,6 +48,7 @@ if st.session_state['page'] == 'home':
     st.header("An open-source tool for creating beautiful videos with AI")
     st.write("Banodoco is a free, open-source animation tool that aims to allow anyone to use AI to create beautiful videos of anything they can imagine.")
     st.write("It's designed for those who want precision - with an approach and tools designed to give artists enough control over various AI models to create exactly what's in their imagination.")
+    st.markdown("[Join Discord](https://discord.gg/kkjkeEaVpZ)   |   [Apply To Test](https://form.typeform.com/to/vR2VNXJV)")
   with header2:
     st.image("https://i.ibb.co/6wsn9j6/Untitled-design-2023-02-24-T160623-805.png",use_column_width='always')
 
@@ -64,7 +65,7 @@ if st.session_state['page'] == 'home':
 
   st.markdown("***")
 
-  st.subheader("An AI native tool for crafting and refining your creation")
+  st.subheader("AI native tools for crafting and refining your creation")
   st.write("Banodoco is designed to be an AI native tool - with all of our features leveraged by AI to make your life easier. We aim to provide you with the tools to create beautiful videos with the least amount of effort possible.")
   feature1, feature2, feature3 = st.columns([1,3,1])
   with feature1:  
@@ -82,18 +83,19 @@ if st.session_state['page'] == 'home':
       st.experimental_rerun()
     st.markdown("*And much more...*")
 
-    if st.session_state['feature'] == 'timing':
+    if st.session_state['feature'] == 'pipelines':
+      feature_image = "https://banodoco.s3.amazonaws.com/input_images/Untitled+design+-+2023-02-26T150703.582.png"
+      feature_text = "Use & build custom pipelines combining multiple models to achieve the exact effect you want"
+    elif st.session_state['feature'] == 'timing':
       feature_image = "https://i.ibb.co/GHxJkd4/Untitled-design-2023-02-23-T220706-388.png"
       feature_text = "Adjust and tweak the timing to achieve your desired effect"
     elif st.session_state['feature'] == 'frame':
       feature_image = "https://i.ibb.co/0QNyK7K/Untitled-design-2023-02-23-T221038-734.png"
       feature_text = "Edit individual key frames with a variety of models until they're perfect"
     elif st.session_state['feature'] == 'backdrop':
-      feature_image = "https://i.ibb.co/0QNyK7K/Untitled-design-2023-02-23-T221038-734.png"
+      feature_image = "https://banodoco.s3.amazonaws.com/input_images/Untitled+design+-+2023-02-26T151015.293.png"
       feature_text = "Transform the backdrop of your video with a variety of models"
-    elif st.session_state['feature'] == 'pipelines':
-      feature_image = "https://i.ibb.co/0QNyK7K/Untitled-design-2023-02-23-T221038-734.png"
-      feature_text = "Create your own custom pipelines to achieve the exact effect you want"
+    
   
   with feature2:
     st.image(feature_image,use_column_width='always')
@@ -117,7 +119,7 @@ if st.session_state['page'] == 'home':
     st.subheader("Philosophy & roadmap")
     st.write("We're building an open-source tool that will enable people to make whatever they can imagine!")
     if st.button("See our philosophy & roadmap"):
-      st.session_state['page'] = 'philosophy & roadmap'
+      st.session_state['page'] = 'philosophy & roadmap'     
       st.experimental_rerun()
   with b2:
     st.image("https://media.discordapp.net/attachments/1017188259102724146/1078451803718438942/peteromallet_minimalistic_illustration_meaning_a_long_journey_R_5dd02f2f-1583-4f39-8eae-6348ac68062a.png", use_column_width='always')
@@ -174,38 +176,49 @@ elif st.session_state['page'] == 'collaborate':
   st.write("Everything you build will not only be open source as part of Banodoco, but will ideally but delivered in a modular way for others to easily use. For example, this means that any models created or optimised will be hosted on Replicate.com for others to easily leverage, while front-end components developed will be built as Streamlit components for others to implement.")  
   
   st.subheader("What we're looking for")
-  st.write("We're looking for high-agency, talented individuals who want to contribute to the project.")
+  st.markdown("We're looking for high-agency, talented individuals who want to take ownership over various components of the project. Below are what we're looking for right now..")
   with st.expander("Optimise existing models to make them practical for usage (ML Engineer)"):
-    st.write("test")
+    st.write("There are a lot of useful models out there that are either too slow or have other barriers to be usable by Banodoco. We're looking for someone to help us optimise these models to make them practical for usage.")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=Help%20optimising%20Banodoco%20models%20(%23BanodocoML)&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoMLOptimiser) and I'll get back if it seems like a good fit")
   with st.expander("Build out front-end components to improve editing process (JavaScript/Front-End)"):
-    st.write("test")
+    st.write("We're looking for someone to help us build out front-end components to improve the editing process. This could include things like a better way to select keyframes, or a better way to pan the camera.")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=mailto:peter@omalley.io?subject=Help%20with%20Banodoco%20Front-End%20&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoFrontEnd) and I'll get back if it seems like a good fit")
   with st.expander("Build a small model for automated key frame selection (ML)"):
-    st.write("test")
-  with st.expander("Build out automated backdrop positioning tool (Python)"):
-    st.write("test")
+    st.write("We're looking for someone to help us build a small model for automated key frame selection. This could be as simple as a model that takes in a video and outputs a list of key frames. Figuring out how to get the data do this will be a big part of the project :)")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=mailto:peter@omalley.io?subject=mailto:peter@omalley.io?subject=Help%20with%20Banodoco%20ML&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoML) and I'll get back if it seems like a good fit")
+  with st.expander("Build out automated scenery/backdrop panning tool (Python)"):
+    st.write("We're looking for someone to help us build out an automated scenery/backdrop panning tool. This will initially start as a tool that takes user input and generates backdrops based on user input (prompts or images) but should be built to evolve into an automated tool. I have a bunch of ideas on how to do this.")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=Help%20with%20Banodoco%20Backdrop%20Python%20project&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoPythonProject) and I'll get back if it seems like a good fit")
   with st.expander("Refine and optimise structure and speed of app (Python)"):
-    st.write("test")    
+    st.write("I'm a software development noob and I'm sure there are a lot of ways to improve the structure and speed of the app. I'm looking for someone to help me with this.")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=Help%20with%20Banodoco%20Backdrop%20Optimisation%20project&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoPythonOptimiser) and I'll get back if it seems like a good fit")
   with st.expander("Other stuff you think of (???"):
-    st.write("test")  
-
-  st.subheader("FAQ:")
-  st.write("Below are some frequently asked questions - well, no one actually has asked me any quesions yet, but I guess I'll just answer them anyway.")
-  with st.expander("How will it work?"):
-    st.write("We'll work together to define a roadmap for the project, and then you'll be able to work on whatever you'd like, with the support of the rest of the team. We'll also be able to provide you with a stipend to support your work.")
-  with st.expander("What kinds of projects?"):
-    st.write("We're looking for people to work on a variety of projects, including but not limited to: optimising existing models, building new models, building out the front-end, building out the back-end, and designing the user experience.")
-  with st.expander("Will I be compensatd?"):
-    st.write("We'll be able to provide you with a stipend to support your work.")
-  with st.expander("How much time will I need to commit?"):
-    st.write("We'll work together to define a roadmap for the project, and then you'll be able to work on whatever you'd like, with the support of the rest of the team.")
-  with st.expander("Who will I be working with?"):
-    st.write("We'll use Discord to communicate and share updates.")
-  with st.expander("How will we communicate?"):
-    st.write("We'll use Discord to communicate and share updates.")
+    st.write("Maybe you can think of something else that would be useful to the project. If so, let me know!")
+    st.markdown("Are you interested? Just send an email to me [here](mailto:peter@omalley.io?subject=Help%20with%20%3F%3F%3F&body=Hi%2C%20my%20name%20is%0D%0A%0D%0ASomething%20I've%20done%20before...%0D%0A%0D%0AI'm%20interested%20because...%0D%0A%0D%0ATag%3A%20BanodocoQuestionMark) and I'll get back if it seems like a good fit")
 
 
 elif st.session_state['page'] == 'gallery':
   
   st.title("Gallery")
+
+  
+
+
+  gallery1, gallery2 = st.columns([1, 1])
+
+  with gallery1:
+    st.markdown("#### The sound of the tires in the snow #2")
+    st.write("Produced: Febuary 2023")
+    st.video("https://youtu.be/vWWBiDjwKkg")
+    st.info("Made with: Banodoco v 0.2")
+    st.markdown("***")
+
+  with gallery2:
+    st.markdown("#### The sound of the tires in the snow #1")
+    st.write("Produced: Decemeber 2022")
+    st.video("https://youtu.be/X_BLuno7C84")
+    st.info("Made with: Banodoco v 0.1")
+    st.markdown("***")
+
     
     
